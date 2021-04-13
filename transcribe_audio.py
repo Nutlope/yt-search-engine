@@ -1,7 +1,7 @@
 import speech_recognition as sr
 
 # Configuration
-fileName = "audio_transcripts/svelte.wav" # name of file to be transcribed
+fileName = "audio_transcripts/ali_abdaal.wav" # name of file to be transcribed
 recognitionType = 'google' # type of speech recognition (google, wit.ai)
 noise = False # indicate True if there is background noise in the audio file
 

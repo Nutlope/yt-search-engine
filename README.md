@@ -9,8 +9,8 @@ This program will be able to download youtube videos using youtube-dl and ffmpeg
 
 ## Work to be Done to make this an Ali Abdaal search engine
 
-[] Fairly accurate but it's only getting the first 30 seconds due to not having a google API key. Get this google API key and verify this issue
-[] Use selenium to scrape all ali abdaal YouTube vids
-[] Run the program overnight, get all text into JSON
-[] Make frontend for search engine with Django
-[] Put JSON data into postgres DB & connect
+- [] Fairly accurate but it's only getting the first 30 seconds due to not having a google API key. Get this google API key and verify this issue
+- [] Use selenium to scrape all ali abdaal YouTube vids
+- [] Run the program overnight, get all text into JSON
+- [] Make frontend for search engine with Django
+- [] Put JSON data into postgres DB & connect

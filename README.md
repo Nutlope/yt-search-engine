@@ -9,10 +9,6 @@ This program will be able to download youtube videos using youtube-dl and ffmpeg
 
 ## Work to be Done
 
-I'd like to turn this project into a search engine for one of my favorite creators, Ali Abdaal. I'd like to have a searchable database for all his videos for easy lookup.
+I'd like to turn this project into a search engine for one of my favorite YouTubers, Ali Abdaal. The idea is to have a searchable database that anyone can look up specific words and it will be able to find videos where he said those words.
 
-- [ ] Fairly accurate but it's only getting the first 30 seconds due to not having a google API key. Get this google API key and verify this issue
-- [ ] Use selenium to scrape all ali abdaal YouTube vids
-- [ ] Run the program overnight, get all text into JSON
-- [ ] Make frontend for search engine with Django
-- [ ] Put JSON data into postgres DB & connect
+Progress is being tracked with GitHub Issues and a kanban board in the Projects tab of this repo.

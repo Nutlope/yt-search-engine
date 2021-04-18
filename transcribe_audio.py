@@ -3,7 +3,7 @@ import wave
 import contextlib
 
 # Configuration
-fileName = "audio_transcripts/ali_abdaal.wav" # name of file to be transcribed
+fileName = "audio/1.wav" # name of file to be transcribed
 noise = False # True if there is background noise in the audio file, False if there is not
 dialect = 'GB' # EN for english accents, GB for british accents 
 
@@ -32,7 +32,7 @@ for offset in offsets:
             r.adjust_for_ambient_noise(source, duration=0.5)
         audio = r.record(source, duration=30, offset=offset)
         try:
-            result += r.recognize_google(audio_data: audio, language: "en-" + dialect)
+            result += r.recognize_google(audio_data = audio, language = "en-" + dialect)
         except sr.UnknownValueError:
             print("Could not understand audio")
         except sr.RequestError as e:

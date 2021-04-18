@@ -4,8 +4,8 @@ import contextlib
 
 # Configuration
 fileName = "audio_transcripts/ali_abdaal.wav" # name of file to be transcribed
-noise = False # indicate True if there is background noise in the audio file
-dialect = 'GB' # GB for british accents, EN for english ones
+noise = False # True if there is background noise in the audio file, False if there is not
+dialect = 'GB' # EN for english accents, GB for british accents 
 
 # Get duration of the audio file
 with contextlib.closing(wave.open(fileName,'r')) as f:

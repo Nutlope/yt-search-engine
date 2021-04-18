@@ -20,7 +20,6 @@ data = {}
 data['video_urls'] = []
 idx = 0
 
-print(video_list)
 # Populate data array with all info
 for item in video_list:
     data['video_urls'].append({
@@ -31,5 +30,5 @@ for item in video_list:
     idx += 1
 
 # Populate JSON file with object of video info
-with open('ali_abdaal_transcriptions.json', 'w') as outfile:
+with open('ali_abdaal_vid_info.json', 'w') as outfile:
     json.dump(data, outfile, indent=1)

@@ -1,6 +1,6 @@
 # YouTube Downloader & Text Transcriber
 
-This program will be able to download youtube videos using youtube-dl and ffmpeg, then transcribe them using the SpeechRecognition python library. Specifically, Google Speech Recognition is used.
+This program will be able to download youtube videos using youtube-dl and ffmpeg, then transcribe them using the SpeechRecognition python library. Specifically, Google Speech Recognition is used. If you don't provide an API key, only the first 30 seconds are transcribed.
 
 ## Usage
 

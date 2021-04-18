@@ -1,30 +1,40 @@
 import speech_recognition as sr
+import wave
+import contextlib
 
 # Configuration
 fileName = "audio_transcripts/ali_abdaal.wav" # name of file to be transcribed
-recognitionType = 'google' # type of speech recognition (google, wit.ai)
 noise = False # indicate True if there is background noise in the audio file
+dialect = 'GB' # GB for british accents, EN for english ones
+
+# Get duration of the audio file
+with contextlib.closing(wave.open(fileName,'r')) as f:
+    frames = f.getnframes()
+    rate = f.getframerate()
+    duration = frames / float(rate)
+
+# Cutting audio into 30 second chunks
+segments = duration / 30
+offsets = [0]
+for i in range(1, int(segments) + 1):
+    if 30 * i < duration:
+        offsets.append(30 * i)
 
 # Transcribing audio file and outputting text to console 
+result = ''
 r = sr.Recognizer()
 curFile = sr.AudioFile(fileName)
-with curFile as source:
-    if noise:
-        # Eliminates background noise for audio with background noise/music
-        print("Eliminating background noise...")
-        r.adjust_for_ambient_noise(source, duration=0.5)
-    audio = r.record(source)
-
-try:
-    if recognitionType == 'google':
-        print("The google translation:") # Using google speech recognition
-        translation = r.recognize_google(audio)
-    elif recognitionType == 'wit.ai':
-        print("The wit.ai translation:") # Using wit.ai speech recognition
-        WIT_AI_KEY = 'XXXXXXXXXXXXXXXXXXXXXXXX'
-        translation = r.recognize_wit(audio, key=WIT_AI_KEY)
-    print(translation)
-except sr.UnknownValueError:
-    print("Could not understand audio")
-except sr.RequestError as e:
-    print("Could not request results from the service; {0}".format(e))
+for offset in offsets:
+    with curFile as source:
+        if noise:
+            # Eliminates background noise for audio with background noise/music
+            print("Eliminating background noise...")
+            r.adjust_for_ambient_noise(source, duration=0.5)
+        audio = r.record(source, duration=30, offset=offset)
+        try:
+            result += r.recognize_google(audio_data: audio, language: "en-" + dialect)
+        except sr.UnknownValueError:
+            print("Could not understand audio")
+        except sr.RequestError as e:
+            print("Could not request results from the service; {0}".format(e))
+print("translation is: ", result)

@@ -21,7 +21,7 @@ I ended up with a JSON file with all the text which I used to populate a noSQL d
 3. Run transcribe_audio.py to transcribe all the audio files and save them in a JSON file
 4. Create a Database and port the JSON file over there. Then connect it to the frontend and voila!
 
-Progress is being tracked with GitHub Issues and a kanban board in the Projects tab of this repo.
+Progress is being tracked with GitHub Issues and a Kanban board in the [Projects tab](https://github.com/Nutlope/yt-search-engine/projects/1) of this repo.
 
 ## Motivation
 

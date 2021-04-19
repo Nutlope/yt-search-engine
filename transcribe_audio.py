@@ -14,9 +14,12 @@ dialect = 'GB' # EN for english accents, GB for british accents
 vidInfo = {}
 with open ("JSON/ali_abdaal_vid_info.json", "r") as outfile:
     vidInfo = json.load(outfile)
-
-for fileName in os.listdir('audio'):
-    fullFileName = 'audio/' + fileName
+count = 0
+for fileName in os.listdir('../new_audio'):
+    count += 1
+    if count > 4:
+        break
+    fullFileName = '../new_audio/' + fileName
     # Get duration of the audio file
     with contextlib.closing(wave.open(fullFileName,'r')) as f:
         frames = f.getnframes()

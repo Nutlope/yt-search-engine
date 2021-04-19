@@ -1,14 +1,30 @@
-# YouTube Downloader & Text Transcriber
+# Ali Abdaal Search Engine
 
-This program will be able to download youtube videos using youtube-dl and ffmpeg, then transcribe them using the SpeechRecognition python library. Specifically, Google Speech Recognition is used. If you don't provide an API key, only the first 30 seconds are transcribed.
+This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and the speech recognition machine learning library, specifically Google Speech Recognition, to transcribe the audio files.
+
+I ended up with a JSON file with all the text which I used to populate a noSQL database (FireStore), then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said.
+
+## Technologies Used
+
+- Python (all scripting)
+- Selenium (web scraping)
+- SpeechRecognition (Google Speech Recognition)
+- youtube-dl (downloading videos)
+- React (Frontend)
+- Firebase (Hosting)
+- FireStore (DataBase)
 
 ## Usage
 
-1. Run the download_yt.py file and change the url to the YouTube video you want to download
-2. Run transcribe_audio.py to get the transcripts.
-
-## Work to be Done
-
-I'd like to turn this project into a search engine for one of my favorite YouTubers, Ali Abdaal. The idea is to have a searchable database that anyone can look up specific words and it will be able to find videos where he said those words.
+1. Run scraping_vid_info.py to get a JSON file with all the video names and URLs of a channel
+2. Run download_yt_vids to download a WAV audio file from each video URL and save it locally
+3. Run transcribe_audio.py to transcribe all the audio files and save them in a JSON file
+4. Create a Database and port the JSON file over there. Then connect it to the frontend and voila!
 
 Progress is being tracked with GitHub Issues and a kanban board in the Projects tab of this repo.
+
+## Motivation
+
+This project was inspired by [Kalle Hallden's Joe Rogan project](https://www.youtube.com/watch?v=UUnAcrzA0nA&t=7s&ab_channel=KalleHallden). The idea behind it is to have a search engine for my favorite YouTuber so that I can lookup certain phrases / words and find videos where he mentions them.
+
+This could also be applicable to students to use for downloading their professor's lectures and creating a searchable database from it to quickly lookup where certain concepts were mentioned. I plan to develop this into a boilerplate anyone can use to create their own search engines starting from video, audio, or text files.

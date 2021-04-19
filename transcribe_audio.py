@@ -6,10 +6,6 @@ import json
 import time
 from datetime import datetime
 
-now = datetime.now()
-current_time = now.strftime("%H:%M:%S")
-print("Time Now =", current_time)
-
 # Configuration
 noise = False # True if there is background noise in the audio file, False if there is not
 dialect = 'GB' # EN for english accents, GB for british accents 
@@ -68,10 +64,3 @@ for fileName in os.listdir('audio'):
     # Write updated JSON back to the file
     with open("final_transcripts.json",'w') as f:
         json.dump(data, f, indent=4)
-
-now = datetime.now()
-current_time = now.strftime("%H:%M:%S")
-print("Time After (62 mins of processing) =", current_time)
-# Took 26 minutes to transcribe 1h of audio. 
-# Therefore will take approx 50 hours to transcribe all of Ali Abdaal's channel
-# So I should run this on a VPS

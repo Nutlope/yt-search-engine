@@ -3,7 +3,7 @@ import json
 
 # Get list of URLs to download
 data = {}
-with open ('ali_abdaal_vid_info.json', 'r') as outfile:
+with open ('JSON/ali_abdaal_vid_info.json', 'r') as outfile:
     data = json.load(outfile)
 
 # Downloading YouTube videos as wav audio files

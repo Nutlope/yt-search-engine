@@ -12,7 +12,7 @@ dialect = 'GB' # EN for english accents, GB for british accents
 
 # Read all the video information
 vidInfo = {}
-with open ("ali_abdaal_vid_info.json", "r") as outfile:
+with open ("JSON/ali_abdaal_vid_info.json", "r") as outfile:
     vidInfo = json.load(outfile)
 
 for fileName in os.listdir('audio'):
@@ -51,7 +51,7 @@ for fileName in os.listdir('audio'):
     print(result)
 
     # Read current JSON file and append data from video to it
-    with open ("final_transcripts.json", "r") as outfile:
+    with open ("JSON/final_transcripts.json", "r") as outfile:
         data = json.load(outfile)
         idx = int(fileName[:-4])
         data["transcripts"].append({
@@ -62,5 +62,5 @@ for fileName in os.listdir('audio'):
         })
 
     # Write updated JSON back to the file
-    with open("final_transcripts.json",'w') as f:
+    with open("JSON/final_transcripts.json",'w') as f:
         json.dump(data, f, indent=4)

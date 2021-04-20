@@ -2,7 +2,7 @@
 
 This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and the speech recognition machine learning library, specifically Google Speech Recognition, to transcribe the audio files.
 
-I ended up with a JSON file with all the text which I used to populate a noSQL database (FireStore), then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said.
+I ended up with a JSON file with all the text which I used to populate the FireStore noSQL database, then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said. (**this part is still in progress**)
 
 ## Technologies Used
 

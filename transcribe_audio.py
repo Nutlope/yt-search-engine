@@ -14,11 +14,7 @@ dialect = 'GB' # EN for english accents, GB for british accents
 vidInfo = {}
 with open ("JSON/ali_abdaal_vid_info.json", "r") as outfile:
     vidInfo = json.load(outfile)
-count = 0
 for fileName in os.listdir('../new_audio'):
-    count += 1
-    if count > 4:
-        break
     fullFileName = '../new_audio/' + fileName
     # Get duration of the audio file
     with contextlib.closing(wave.open(fullFileName,'r')) as f:
@@ -50,9 +46,7 @@ for fileName in os.listdir('../new_audio'):
                 print("Could not understand audio")
             except sr.RequestError as e:
                 print("Could not request results from the service; {0}".format(e))
-    print("NEW RESULT")
-    print(result)
-
+    print("{} done".format(fileName))
     # Read current JSON file and append data from video to it
     with open ("JSON/final_transcripts.json", "r") as outfile:
         data = json.load(outfile)

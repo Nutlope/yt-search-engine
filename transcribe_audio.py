@@ -5,6 +5,7 @@ import os
 import json
 import time
 from datetime import datetime
+from getTranscriptInfo import missingVids
 
 # Configuration
 noise = False # True if there is background noise in the audio file, False if there is not
@@ -15,6 +16,10 @@ vidInfo = {}
 with open ("JSON/ali_abdaal_vid_info.json", "r") as outfile:
     vidInfo = json.load(outfile)
 for fileName in os.listdir('../new_audio'):
+    idx = int(fileName[:-4])
+    if idx not in missingVids:
+        print("skipped vid")
+        continue
     fullFileName = '../new_audio/' + fileName
     # Get duration of the audio file
     with contextlib.closing(wave.open(fullFileName,'r')) as f:
@@ -50,7 +55,6 @@ for fileName in os.listdir('../new_audio'):
     # Read current JSON file and append data from video to it
     with open ("JSON/final_transcripts.json", "r") as outfile:
         data = json.load(outfile)
-        idx = int(fileName[:-4])
         data["transcripts"].append({
             "id": vidInfo["video_urls"][idx]["id"],
             "name": vidInfo["video_urls"][idx]["name"],

@@ -13,3 +13,7 @@
   margin-right: 8px;
   margin-left: 2px;
 }
+
+#searchBar {
+  border-radius: 50px;
+}

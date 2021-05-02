@@ -1,6 +1,8 @@
 import { Formik, Field, Form } from "formik";
 import { FormControl, Input } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
+import { SearchIcon } from "@chakra-ui/icons";
+import "../App.css";
 
 export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
   let history = useHistory();
@@ -20,7 +22,7 @@ export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
           <Form>
             <Field name="search">
               {({ field }) => (
-                <FormControl>
+                <FormControl id="searchBar">
                   <Input
                     {...field}
                     h={height}
@@ -28,6 +30,7 @@ export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
                     type="text"
                     placeholder="Search any Ali Abdaal quote"
                   />
+                  <SearchIcon mx="-35px" mt="-3px" color="grey" />
                 </FormControl>
               )}
             </Field>

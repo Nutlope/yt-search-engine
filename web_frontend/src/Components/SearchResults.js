@@ -8,7 +8,6 @@ import supabase from "../supabase.js";
 import { useEffect, useState } from "react";
 
 const SearchResults = ({ searchVal, setSearchVal }) => {
-  // TODO: sort results by shortest transcripts
   const [thedata, setTheData] = useState();
 
   useEffect(() => {
@@ -37,7 +36,8 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
     for (let element of result) {
       updated_results.push(element["data"]);
     }
-    console.log("result is: ", updated_results);
+    // sort results by shortest transcripts
+    updated_results.sort((a, b) => a.text.length - b.text.length);
   }
 
   return (

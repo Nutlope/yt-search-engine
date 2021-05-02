@@ -2,9 +2,9 @@ import { Link, Text, Stack } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import "../App.css";
 
-const ListView = () => {
+const Results = () => {
   return (
-    <div className="ListView">
+    <div className="Results">
       <Stack>
         <Link
           color="teal.600"
@@ -43,4 +43,4 @@ const ListView = () => {
   );
 };
 
-export default ListView;
+export default Results;

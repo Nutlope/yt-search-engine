@@ -1,4 +1,10 @@
-.ListView {
+.Results {
   margin: 15px;
   padding: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }

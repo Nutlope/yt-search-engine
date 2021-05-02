@@ -1,29 +1,31 @@
 import { Heading, Image } from "@chakra-ui/react";
-import ListView from "./ListView.js";
+import Results from "./Results.js";
 import Search from "./Search.js";
 import croppedDuck from "../Images/croppedDuck.png";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const SearchResults = () => {
   return (
-    <div className="Search Results">
-      <Link to="/">
-        <Image
-          src={croppedDuck}
-          alt="DuckDuckAbdaal"
-          w="142px"
-          h="100px"
-          mb={10}
-          ml={3}
-        />
-      </Link>
-
-      <Search />
-      <Heading size="md" mt={10}>
+    <>
+      <div className="container">
+        <Link to="/">
+          <Image
+            src={croppedDuck}
+            alt="DuckDuckAbdaal"
+            w="95.14px"
+            h="67px"
+            mr={8}
+            ml={2}
+          />
+        </Link>
+        <Search />
+      </div>
+      <Heading size="md" mt={10} ml={30}>
         Times said: <b>{6}</b>
       </Heading>
-      <ListView />
-    </div>
+      <Results />
+    </>
   );
 };
 

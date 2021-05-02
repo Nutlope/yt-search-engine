@@ -44,13 +44,12 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
     <>
       <div className="container">
         <Link to="/">
-          <Image
+          <img
             src={croppedDuck}
             alt="DuckDuckAbdaal"
-            w="95.14px"
-            h="67px"
-            mr={8}
-            ml={2}
+            width="95.14px"
+            height="67px"
+            id="searchImage"
           />
         </Link>
         <Search setSearchVal={setSearchVal} />

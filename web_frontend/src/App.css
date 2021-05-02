@@ -8,3 +8,8 @@
   align-items: center;
   margin: 10px;
 }
+
+#searchImage {
+  margin-right: 8px;
+  margin-left: 2px;
+}

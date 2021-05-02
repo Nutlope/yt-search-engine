@@ -51,7 +51,7 @@ for fileName in os.listdir('../new_audio'):
     # Read current JSON file and append data from video to it
     with open ("JSON/final_transcripts.json", "r") as outfile:
         data = json.load(outfile)
-        data.append({
+        data["transcripts"].append({
             "id": vidInfo["video_urls"][idx]["id"],
             "name": vidInfo["video_urls"][idx]["name"],
             "video_url": vidInfo["video_urls"][idx]["video_url"],

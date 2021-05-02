@@ -1,4 +1,4 @@
-import { Heading, Image } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import Results from "./Results.js";
 import { Search } from "./Search.js";
 import croppedDuck from "../Images/croppedDuck.png";
@@ -55,10 +55,7 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
         <Search setSearchVal={setSearchVal} />
       </div>
       <Heading size="md" mt={10} ml={30}>
-        Times said:{" "}
-        <b>
-          {updated_results === [] ? "searching..." : updated_results.length}
-        </b>
+        Times said: <b>{updated_results.length}</b>
       </Heading>
       {updated_results.map((result) => (
         <Results

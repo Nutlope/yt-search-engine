@@ -12,6 +12,7 @@ yarn.lock
 # production
 /build
 firebase.js
+supabase.js
 /.firebase
 
 # misc

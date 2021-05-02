@@ -2,24 +2,24 @@ import { Formik, Field, Form } from "formik";
 import { FormControl, Input } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 
-const Search = ({ width = "550px", height = "37px" }) => {
+export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
   let history = useHistory();
-
   return (
     <>
       <Formik
         initialValues={{ search: "" }}
         onSubmit={(values) => {
-          // TODO: Make API call to search firestore here then display results when I get them back
           history.push("/results");
+          setSearchVal(values);
         }}
       >
-        {(props) => (
+        {() => (
           <Form>
             <Field name="search">
-              {({ field, form }) => (
+              {({ field }) => (
                 <FormControl>
                   <Input
+                    {...field}
                     h={height}
                     w={width}
                     type="text"
@@ -34,5 +34,3 @@ const Search = ({ width = "550px", height = "37px" }) => {
     </>
   );
 };
-
-export default Search;

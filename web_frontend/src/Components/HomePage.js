@@ -1,8 +1,8 @@
 import { Box, Image, Center } from "@chakra-ui/react";
 import duckLogo from "../Images/duckLogo.png";
-import Search from "./Search.js";
+import { Search } from "./Search.js";
 
-const HomePage = () => {
+const HomePage = ({ setSearchVal }) => {
   return (
     <>
       <Center>
@@ -11,7 +11,7 @@ const HomePage = () => {
         </Box>
       </Center>
       <Center mt={-55}>
-        <Search width="700px" height="50px" />
+        <Search width="700px" height="50px" setSearchVal={setSearchVal} />
       </Center>
     </>
   );

@@ -1,15 +1,17 @@
 import { Heading, Image } from "@chakra-ui/react";
 import Results from "./Results.js";
-import Search from "./Search.js";
+import { Search } from "./Search.js";
 import croppedDuck from "../Images/croppedDuck.png";
 import { Link } from "react-router-dom";
 import "../App.css";
 import supabase from "../supabase.js";
 import { useEffect, useState } from "react";
 
-const SearchResults = () => {
+const SearchResults = ({ searchVal, setSearchVal }) => {
   // TODO: sort results by shortest transcripts
   const [thedata, setTheData] = useState();
+
+  console.log("searchVal from SearchResults is: ", searchVal);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,14 +24,14 @@ const SearchResults = () => {
     fetchData();
   }, []);
 
+  let updated_results = [];
   if (thedata) {
     // Parsing searched text
-    let quote = "finals"; // TODO: Get this quote from the search component
+    let quote = searchVal["search"];
     const result = thedata.filter((obj) => obj["data"].text.includes(quote));
 
-    let updated_results = [];
     for (let element of result) {
-      updated_results.push(element["data"].text);
+      updated_results.push(element["data"]);
     }
     console.log("result is: ", updated_results);
   }
@@ -47,12 +49,19 @@ const SearchResults = () => {
             ml={2}
           />
         </Link>
-        <Search />
+        <Search setSearchVal={setSearchVal} />
       </div>
       <Heading size="md" mt={10} ml={30}>
-        Times said: <b>{6}</b>
+        Times said: <b>{updated_results.length}</b>
       </Heading>
-      <Results />
+      {updated_results.map((result) => (
+        <Results
+          video_url={result.video_url}
+          title={result.name}
+          text={result.text}
+          key={result.id}
+        />
+      ))}
     </>
   );
 };

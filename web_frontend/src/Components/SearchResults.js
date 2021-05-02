@@ -11,8 +11,6 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
   // TODO: sort results by shortest transcripts
   const [thedata, setTheData] = useState();
 
-  console.log("searchVal from SearchResults is: ", searchVal);
-
   useEffect(() => {
     async function fetchData() {
       const { data, error } = await supabase.from("temp").select();
@@ -28,7 +26,13 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
   if (thedata) {
     // Parsing searched text
     let quote = searchVal["search"];
-    const result = thedata.filter((obj) => obj["data"].text.includes(quote));
+    let upperCaseQuote = quote.charAt(0).toUpperCase() + quote.slice(1);
+    let lowerCaseQuote = quote.charAt(0).toLowerCase() + quote.slice(1);
+    const result = thedata.filter(
+      (obj) =>
+        obj["data"].text.includes(upperCaseQuote) ||
+        obj["data"].text.includes(lowerCaseQuote)
+    );
 
     for (let element of result) {
       updated_results.push(element["data"]);
@@ -52,7 +56,10 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
         <Search setSearchVal={setSearchVal} />
       </div>
       <Heading size="md" mt={10} ml={30}>
-        Times said: <b>{updated_results.length}</b>
+        Times said:{" "}
+        <b>
+          {updated_results === [] ? "searching..." : updated_results.length}
+        </b>
       </Heading>
       {updated_results.map((result) => (
         <Results

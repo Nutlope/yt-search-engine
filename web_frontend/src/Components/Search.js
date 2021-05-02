@@ -9,8 +9,8 @@ export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
       <Formik
         initialValues={{ search: "" }}
         onSubmit={(values) => {
-          history.push("/results");
           setSearchVal(values);
+          history.push("/results");
         }}
       >
         {() => (

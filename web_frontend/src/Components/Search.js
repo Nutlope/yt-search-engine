@@ -10,7 +10,10 @@ export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
         initialValues={{ search: "" }}
         onSubmit={(values) => {
           setSearchVal(values);
-          history.push("/results");
+          history.push({
+            pathname: "/results",
+            search: "?" + values["search"],
+          });
         }}
       >
         {() => (

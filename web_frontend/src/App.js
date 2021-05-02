@@ -1,25 +1,22 @@
-import "./App.css";
 import HomePage from "./Components/HomePage.js";
 import SearchResults from "./Components/SearchResults.js";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [searchVal, setSearchVal] = useState("");
-
+  const location = useLocation();
+  const [searchVal, setSearchVal] = useState({
+    search: location.search.slice(1),
+  });
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <HomePage setSearchVal={setSearchVal} />
-          </Route>
-          <Route path="/results">
-            <SearchResults searchVal={searchVal} setSearchVal={setSearchVal} />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <HomePage setSearchVal={setSearchVal} />
+      </Route>
+      <Route path="/results">
+        <SearchResults searchVal={searchVal} setSearchVal={setSearchVal} />
+      </Route>
+    </Switch>
   );
 }
 

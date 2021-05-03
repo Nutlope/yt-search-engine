@@ -2,7 +2,8 @@ import { Link, Text, Stack } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import "../App.css";
 
-const Results = ({ video_url, title, text }) => {
+const Results = ({ video_url, title, text, quote }) => {
+  const textArray = text.split(quote);
   return (
     <div className="Results">
       <Stack>
@@ -13,8 +14,18 @@ const Results = ({ video_url, title, text }) => {
           Transcription:
         </Text>
       </Stack>
-      {/* TODO: Show the last & first 15 seconds before/after the word and bold it instead of showing whole transcript */}
-      <Text>{text}</Text>
+      <Text>
+        {'"...'}
+        <span>
+          {textArray.map((item, index) => (
+            <>
+              {item}
+              {index !== textArray.length - 1 && <b>{quote}</b>}
+            </>
+          ))}
+        </span>
+        {'..."'}
+      </Text>
     </div>
   );
 };

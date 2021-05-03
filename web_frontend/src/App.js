@@ -11,7 +11,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage setSearchVal={setSearchVal} />
+        <HomePage setSearchVal={setSearchVal} searchVal={searchVal} />
       </Route>
       <Route path="/results">
         <SearchResults searchVal={searchVal} setSearchVal={setSearchVal} />

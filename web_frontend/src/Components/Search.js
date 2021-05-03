@@ -4,12 +4,19 @@ import { useHistory } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 import "../App.css";
 
-export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
+export const Search = ({
+  width = "550px",
+  height = "37px",
+  setSearchVal,
+  searchVal,
+}) => {
   let history = useHistory();
   return (
     <>
       <Formik
-        initialValues={{ search: "" }}
+        initialValues={{
+          search: searchVal["search"] === "" ? "" : searchVal["search"],
+        }}
         onSubmit={(values) => {
           setSearchVal(values);
           history.push({

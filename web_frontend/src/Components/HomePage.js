@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import "../App.css";
 import { Formik, Field, Form } from "formik";
 
-const HomePage = ({ setSearchVal }) => {
+const HomePage = ({ setSearchVal, searchVal }) => {
   let history = useHistory();
   let luckySearches = ["notion", "productivity", "doctor", "anki", "mac"];
 
@@ -17,7 +17,12 @@ const HomePage = ({ setSearchVal }) => {
         </Box>
       </Center>
       <Center mt={-55}>
-        <Search width="700px" height="50px" setSearchVal={setSearchVal} />
+        <Search
+          width="700px"
+          height="50px"
+          setSearchVal={setSearchVal}
+          searchVal={searchVal}
+        />
       </Center>
       <div id="buttonContainer">
         <Formik

@@ -34,6 +34,20 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
     );
 
     for (let element of result) {
+      // Parse out 750 chars around quote
+      let idx = element["data"].text.indexOf(quote);
+      let new_str = element["data"].text.substring(idx - 350, idx + 350);
+
+      // Making sure it stops at a space at both ends
+      let spaceIdx = new_str.indexOf(" ");
+      let reversedStr = new_str.split("").reverse().join("");
+      let lastSpaceIdx = reversedStr.indexOf(" ");
+      let final_str = new_str.substring(
+        spaceIdx + 1,
+        new_str.length - lastSpaceIdx - 1
+      );
+
+      element["data"].text = final_str;
       updated_results.push(element["data"]);
     }
     // sort results by shortest transcripts
@@ -52,13 +66,14 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
             id="searchImage"
           />
         </Link>
-        <Search setSearchVal={setSearchVal} />
+        <Search setSearchVal={setSearchVal} searchVal={searchVal} />
       </div>
       <Heading size="md" mt={10} ml={30}>
         Times said: <b>{updated_results.length}</b>
       </Heading>
       {updated_results.map((result) => (
         <Results
+          quote={searchVal["search"]}
           video_url={result.video_url}
           title={result.name}
           text={result.text}

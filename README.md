@@ -29,4 +29,4 @@ Progress is being tracked with GitHub Issues and a Kanban board in the [Projects
 
 This project was inspired by [Kalle Hallden's Joe Rogan project](https://www.youtube.com/watch?v=UUnAcrzA0nA&t=7s&ab_channel=KalleHallden). The idea behind it is to have a search engine for my favorite YouTuber so that I can lookup certain phrases / words and find videos where he mentions them.
 
-This could also be applicable to students to use for downloading their professor's lectures and creating a searchable database from it to quickly lookup where certain concepts were mentioned. I plan to develop this into a boilerplate anyone can use to create their own search engines starting from video, audio, or text files.
+This could also be applicable to students to use for downloading their professor's lectures and creating a searchable database from it to quickly lookup where certain concepts were mentioned. Another application is for conferences to take all talks, makes them transcribable, and search it. I plan to develop this into a boilerplate anyone can use to create their own search engines starting from video, audio, or text files.

@@ -1,5 +1,7 @@
 # Ali Abdaal Search Engine
 
+![image](https://user-images.githubusercontent.com/63742054/116843039-aa9be480-abac-11eb-82b7-1f5508d4d1d2.png)
+
 This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and Google Speech Recognition to transcribe the audio files.
 
 I then took all the data and used it to populate a Postgres database hosted on supabase, then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said.

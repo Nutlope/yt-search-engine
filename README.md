@@ -1,5 +1,7 @@
 # Ali Abdaal Search Engine
 
+![image](https://user-images.githubusercontent.com/63742054/116843039-aa9be480-abac-11eb-82b7-1f5508d4d1d2.png)
+
 This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and Google Speech Recognition to transcribe the audio files.
 
 I then took all the data and used it to populate a Postgres database hosted on supabase, then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said.
@@ -27,4 +29,4 @@ Progress is being tracked with GitHub Issues and a Kanban board in the [Projects
 
 This project was inspired by [Kalle Hallden's Joe Rogan project](https://www.youtube.com/watch?v=UUnAcrzA0nA&t=7s&ab_channel=KalleHallden). The idea behind it is to have a search engine for my favorite YouTuber so that I can lookup certain phrases / words and find videos where he mentions them.
 
-This could also be applicable to students to use for downloading their professor's lectures and creating a searchable database from it to quickly lookup where certain concepts were mentioned. I plan to develop this into a boilerplate anyone can use to create their own search engines starting from video, audio, or text files.
+This could also be applicable to students to use for downloading their professor's lectures and creating a searchable database from it to quickly lookup where certain concepts were mentioned. Another application is for conferences to take all talks, makes them transcribable, and search it. I plan to develop this into a boilerplate anyone can use to create their own search engines starting from video, audio, or text files.

@@ -1,8 +1,8 @@
 # Ali Abdaal Search Engine
 
-This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and the speech recognition machine learning library, specifically Google Speech Recognition, to transcribe the audio files.
+This is a search engine of my favorite YouTuber, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and Google Speech Recognition to transcribe the audio files.
 
-I ended up with a JSON file with all the text which I used to populate the FireStore noSQL database, then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said. (**this part is still in progress**)
+I then took all the data and used it to populate a Postgres database hosted on supabase, then built a frontend with React where users can look up phrases and find out how many times and in which videos were they said.
 
 ## Technologies Used
 
@@ -10,16 +10,16 @@ I ended up with a JSON file with all the text which I used to populate the FireS
 - Selenium (web scraping)
 - SpeechRecognition (Google Speech Recognition)
 - youtube-dl (downloading videos)
-- React (Frontend)
-- Firebase (Hosting)
-- FireStore (DataBase)
+- React & Chakra UI (Frontend)
+- Firebase (Hosting & Analytics)
+- Supabase (Postgres DataBase)
 
 ## Usage
 
 1. Run scraping_vid_info.py to get a JSON file with all the video names and URLs of a channel
 2. Run download_yt_vids to download a WAV audio file from each video URL and save it locally
 3. Run transcribe_audio.py to transcribe all the audio files and save them in a JSON file
-4. Create a Database and port the JSON file over there. Then connect it to the frontend and voila!
+4. Create a database and port the JSON file over there. Then connect it to the frontend and voila!
 
 Progress is being tracked with GitHub Issues and a Kanban board in the [Projects tab](https://github.com/Nutlope/yt-search-engine/projects/1) of this repo.
 

@@ -54,7 +54,7 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
     // sort results by shortest transcripts
     updated_results.sort((a, b) => a.text.length - b.text.length);
   }
-
+  console.log(updated_results);
   return (
     <>
       <div className="container">
@@ -69,9 +69,16 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
         </Link>
         <Search setSearchVal={setSearchVal} searchVal={searchVal} />
       </div>
-      <Heading size="md" mt={10} ml={30}>
-        Times said: <b>{updated_results.length}</b>
-      </Heading>
+      {updated_results.length > 0 && (
+        <Heading size="md" mt={10} ml={30}>
+          Videos said: <b>{updated_results.length}</b>
+        </Heading>
+      )}
+      {updated_results.length === 0 && (
+        <Heading size="md" mt={10} ml={30}>
+          Searching...
+        </Heading>
+      )}
       {updated_results.map((result) => (
         <Results
           quote={searchVal["search"].toLowerCase()}

@@ -27,3 +27,20 @@
 #lucky {
   font-weight: lighter;
 }
+
+#wrapper {
+  min-height: calc(100vh - 50px);
+}
+#footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+#orange {
+  color: #f4a18a;
+}

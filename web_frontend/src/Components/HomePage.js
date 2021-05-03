@@ -4,6 +4,7 @@ import { Search } from "./Search.js";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import { Formik, Field, Form } from "formik";
+// import { Helmet } from "react-helmet";
 
 const HomePage = ({ setSearchVal, searchVal }) => {
   let history = useHistory();
@@ -12,6 +13,11 @@ const HomePage = ({ setSearchVal, searchVal }) => {
   return (
     <>
       <div id="wrapper">
+        {/* <Helmet>
+          <meta charSet="utf-8" />
+          <title>My Title</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet> */}
         <Center>
           <Box boxSize="lg" mb={-10} ml={19}>
             <img src={duckLogo} alt="DuckDuckAbdaal" />

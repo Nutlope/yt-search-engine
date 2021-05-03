@@ -54,7 +54,6 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
     // sort results by shortest transcripts
     updated_results.sort((a, b) => a.text.length - b.text.length);
   }
-  console.log(updated_results);
   return (
     <>
       <div className="container">
@@ -71,7 +70,11 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
       </div>
       {updated_results.length > 0 && (
         <Heading size="md" mt={10} ml={30}>
-          Videos said: <b>{updated_results.length}</b>
+          Found{" "}
+          <span class="primary-color">
+            "{searchVal["search"].toLowerCase()}"
+          </span>{" "}
+          in <b>{updated_results.length}</b> videos
         </Heading>
       )}
       {updated_results.length === 0 && (

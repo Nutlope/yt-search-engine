@@ -24,6 +24,7 @@ export const Search = ({ width = "550px", height = "37px", setSearchVal }) => {
               {({ field }) => (
                 <FormControl id="searchBar">
                   <Input
+                    colorScheme="teal"
                     {...field}
                     h={height}
                     w={width}

@@ -17,3 +17,13 @@
 #searchBar {
   border-radius: 50px;
 }
+
+#buttonContainer {
+  display: flex;
+  margin: 32px;
+  justify-content: center;
+}
+
+#lucky {
+  font-weight: lighter;
+}

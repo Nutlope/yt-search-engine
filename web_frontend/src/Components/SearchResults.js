@@ -35,7 +35,8 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
 
     for (let element of result) {
       // Parse out 750 chars around quote
-      let idx = element["data"].text.indexOf(quote);
+      let idx = element["data"].text.indexOf(lowerCaseQuote);
+      if (idx === -1) idx = element["data"].text.indexOf(upperCaseQuote);
       let new_str = element["data"].text.substring(idx - 350, idx + 350);
 
       // Making sure it stops at a space at both ends
@@ -73,7 +74,7 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
       </Heading>
       {updated_results.map((result) => (
         <Results
-          quote={searchVal["search"]}
+          quote={searchVal["search"].toLowerCase()}
           video_url={result.video_url}
           title={result.name}
           text={result.text}

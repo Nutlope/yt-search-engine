@@ -28,9 +28,17 @@
   font-weight: lighter;
 }
 
-#wrapper {
-  margin-top: 160px;
-  min-height: calc(100vh - 210px);
+@media (min-width: 601px) {
+  #wrapper {
+    margin-top: 160px;
+    min-height: calc(100vh - 210px);
+  }
+}
+@media screen and (max-width: 600px) {
+  #wrapper {
+    margin-top: 60px;
+    min-height: calc(100vh - 110px);
+  }
 }
 
 #footer {

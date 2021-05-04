@@ -2,6 +2,7 @@ import { Formik, Field, Form } from "formik";
 import { FormControl, Input } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
+import { useState, useEffect } from "react";
 import "../App.css";
 
 export const Search = ({
@@ -11,6 +12,18 @@ export const Search = ({
   searchVal,
 }) => {
   let history = useHistory();
+  // Make it responsive on mobile
+  const [curWidth, setCurWidth] = useState();
+  useEffect(() => {
+    let wd =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    console.log(wd);
+    setCurWidth(wd);
+  }, []);
+
+  if (curWidth < 600) width = "300px";
   return (
     <>
       <Formik

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 const SearchResults = ({ searchVal, setSearchVal }) => {
   const [thedata, setTheData] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,7 +19,12 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
       }
       setTheData(data);
     }
+    function resultsFound() {
+      setTimeout(() => setIsLoaded(true), 1700);
+    }
+
     fetchData();
+    resultsFound();
   }, []);
 
   let updated_results = [];
@@ -51,6 +57,7 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
       element["data"].text = final_str;
       updated_results.push(element["data"]);
     }
+
     // sort results by shortest transcripts
     updated_results.sort((a, b) => a.text.length - b.text.length);
   }
@@ -71,15 +78,20 @@ const SearchResults = ({ searchVal, setSearchVal }) => {
       {updated_results.length > 0 && (
         <Heading size="md" mt={10} ml={30}>
           Found{" "}
-          <span class="primary-color">
+          <span className="primary-color">
             "{searchVal["search"].toLowerCase()}"
           </span>{" "}
           in <b>{updated_results.length}</b> videos
         </Heading>
       )}
-      {updated_results.length === 0 && (
+      {updated_results.length === 0 && isLoaded === false && (
         <Heading size="md" mt={10} ml={30}>
           Searching...
+        </Heading>
+      )}
+      {updated_results.length === 0 && isLoaded === true && (
+        <Heading size="md" mt={10} ml={30}>
+          Sorry, no results found! Search for something else.
         </Heading>
       )}
       {updated_results.map((result) => (

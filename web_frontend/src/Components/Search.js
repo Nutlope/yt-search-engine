@@ -31,7 +31,7 @@ export const Search = ({
               {({ field }) => (
                 <FormControl id="searchBar">
                   <Input
-                    colorScheme="teal"
+                    focusBorderColor="#de5833"
                     {...field}
                     h={height}
                     w={width}

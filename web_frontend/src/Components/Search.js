@@ -5,7 +5,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import "../App.css";
 
 export const Search = ({
-  width = "550px",
+  width = "500px",
   height = "37px",
   setSearchVal,
   searchVal,

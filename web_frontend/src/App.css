@@ -29,7 +29,8 @@
 }
 
 #wrapper {
-  min-height: calc(100vh - 50px);
+  margin-top: 160px;
+  min-height: calc(100vh - 210px);
 }
 #footer {
   display: flex;
@@ -47,4 +48,8 @@
 
 .primary-color {
   color: #de5833;
+}
+
+#logoImage {
+  margin-left: 40px;
 }

@@ -1,5 +1,5 @@
-import { Box, Center, Button } from "@chakra-ui/react";
-import duckLogo from "../Images/duckLogo.png";
+import { Center, Button, Heading } from "@chakra-ui/react";
+import duckLogo from "../Images/croppedLogo.png";
 import { Search } from "./Search.js";
 import { useHistory } from "react-router-dom";
 import "../App.css";
@@ -13,13 +13,17 @@ const HomePage = ({ setSearchVal, searchVal }) => {
     <>
       <div id="wrapper">
         <Center>
-          <Box boxSize="lg" mb={-10} ml={19}>
-            <img src={duckLogo} alt="DuckDuckAbdaal" />
-          </Box>
+          <img
+            id="logoImage"
+            src={duckLogo}
+            alt="DuckDuckAbdaal"
+            width="319px"
+            height="225px"
+          />
         </Center>
-        <Center mt={-55}>
+        <Center mt={4}>
           <Search
-            width="700px"
+            width="600px"
             height="50px"
             setSearchVal={setSearchVal}
             searchVal={searchVal}

@@ -3,8 +3,6 @@ import wave
 import contextlib
 import os
 import json
-import time
-from datetime import datetime
 
 # Configuration
 noise = False # True if there is background noise in the audio file, False if there is not
@@ -14,9 +12,11 @@ dialect = 'GB' # EN for english accents, GB for british accents
 vidInfo = {}
 with open ("JSON/ali_abdaal_vid_info.json", "r") as outfile:
     vidInfo = json.load(outfile)
+
 for fileName in os.listdir('../new_audio'):
     idx = int(fileName[:-4])
     fullFileName = '../new_audio/' + fileName
+
     # Get duration of the audio file
     with contextlib.closing(wave.open(fullFileName,'r')) as f:
         frames = f.getnframes()
@@ -48,6 +48,7 @@ for fileName in os.listdir('../new_audio'):
             except sr.RequestError as e:
                 print("Could not request results from the service; {0}".format(e))
     print("{} done".format(fileName))
+    
     # Read current JSON file and append data from video to it
     with open ("JSON/final_transcripts.json", "r") as outfile:
         data = json.load(outfile)

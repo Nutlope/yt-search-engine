@@ -4,3 +4,4 @@ sample_audio_transcripts/
 .DS_Store
 final_transcripts.json
 output.json
+ARTICLE.md

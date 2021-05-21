@@ -1,8 +1,6 @@
 # This script will scrape all video name and URLs from a channel and store them in a JSON file
 from selenium import webdriver
 import time
-from selenium.webdriver.common.keys import Keys
-import os
 import json
 
 driver = webdriver.Chrome('../../Downloads/chromedriver')

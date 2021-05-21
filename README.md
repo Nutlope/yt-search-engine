@@ -1,6 +1,6 @@
 # Ali Abdaal Search Engine
 
-![image](https://user-images.githubusercontent.com/63742054/116843039-aa9be480-abac-11eb-82b7-1f5508d4d1d2.png)
+![image](https://user-images.githubusercontent.com/63742054/117086022-6a0da980-ad19-11eb-8fe6-1e7bf30d4b76.png)
 
 This is a personalized search engine for my favorite YouTubers, Ali Abdaal. I used selenium to scrape all his videos, youtube-dl to download them as audio files, and Google Speech Recognition to transcribe the audio files.
 
